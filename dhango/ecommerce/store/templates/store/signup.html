@@ -1,0 +1,186 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static '/css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{% static '/css/signup.css'%}">
+    <title>Signup Page</title>
+    <style>
+        
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Rishabh</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="teacher_intro">About the  Teacher</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="achievements">Achievements</a>
+                </li>
+                
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                
+                <button class="btn btn-warning"> <a class="nav-link" href="signup">SignUp</a></button>
+                <button class="btn btn-danger"> <a class="nav-link" href="login">Login</a></button>
+            </form>
+        </div>
+    </nav>
+    <div class="alert alert-dark" role="alert">
+        {% for message in messages %}
+       <h1>{{message}}</h1>
+        {% endfor %}
+    
+      </div>
+    <div class="container1">
+        <main class="my-form">
+            <div class="cotainer">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">Register</div>
+                            <div class="card-body">
+                                <form name="my-form" action="signup" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group row">
+                                        <label for="first_name" class="col-md-4 col-form-label text-md-right">First
+                                            Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="first_name" class="form-control" name="first_name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="last_name" class="col-md-4 col-form-label text-md-right">
+                                            Last Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="last_name" class="form-control" name="last_name">
+                                        </div>
+                                    </div>
+
+                                   
+
+                                    <div class="form-group row">
+                                        <label for="user_name" class="col-md-4 col-form-label text-md-right">User
+                                            Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="user_name" class="form-control" name="username">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="pass1" class="col-md-4 col-form-label text-md-right">Password :</label>
+                                        <div class="col-md-6">
+                                            <input type="password" id="pass1" class="form-control" name="password1">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="pass2" class="col-md-4 col-form-label text-md-right">Confirm Passowrd:</label>
+                                        <div class="col-md-6">
+                                            <input type="password" id="pass2" class="form-control" name="password2">
+                                        </div>
+                                    </div>
+                                  
+
+                                    
+
+                                  
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            Register
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+    </div>
+
+
+   
+    <hr>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+          <small class="d-block mb-3 text-muted">© 2017-2018</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Cool stuff</a></li>
+            <li><a class="text-muted" href="#">Random feature</a></li>
+            <li><a class="text-muted" href="#">Team feature</a></li>
+            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+            <li><a class="text-muted" href="#">Another one</a></li>
+            <li><a class="text-muted" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Resource</a></li>
+            <li><a class="text-muted" href="#">Resource name</a></li>
+            <li><a class="text-muted" href="#">Another resource</a></li>
+            <li><a class="text-muted" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Business</a></li>
+            <li><a class="text-muted" href="#">Education</a></li>
+            <li><a class="text-muted" href="#">Government</a></li>
+            <li><a class="text-muted" href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Team</a></li>
+            <li><a class="text-muted" href="#">Locations</a></li>
+            <li><a class="text-muted" href="#">Privacy</a></li>
+            <li><a class="text-muted" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+</div>
+
+<script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js'%}"
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"></script>
+<script src="{% static 'https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'%}"
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+crossorigin="anonymous"></script>
+<script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js'%}"
+integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+crossorigin="anonymous"></script>
+</body>
+
+</html>
